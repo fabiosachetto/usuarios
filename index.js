@@ -1,4 +1,4 @@
-var olaMundo = ('Olá Mundo');
+/*var olaMundo = ('Olá Mundo');
 console.log("Primeira Variável " + olaMundo);
 
 
@@ -115,4 +115,4 @@ class celular2 {
 
 let objeto2 = new celular2();
 
-console.log (objeto2.ligar2());
+console.log (objeto2.ligar2());*/
