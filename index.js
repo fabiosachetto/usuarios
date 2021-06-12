@@ -22,22 +22,25 @@ var fields = document.querySelectorAll("#form-user-create [name]");
 //Criando um objeto (no caso é um JSon)
 var user = {  };
 
-fields.forEach(function(field){
+//getElementById serve para pegar o ID da tag HTML q vai ser manipulado. addEventListener pega o evento q o botão vai realizar.
+document.getElementById("form-user-create").addEventListener("submit", function(event){
 
-    if (field.name == "gender") {
-        if (field.checked) {
-            //console.log("SIM", field);
+    event.preventDefault();
+
+    fields.forEach(function(field){
+
+        if (field.name == "gender") {
+            if (field.checked) {
+                user[field.name] = field.value;
+            }
+        } else {
             user[field.name] = field.value;
         }
-    } else {
-        //console.log("NÃO");
-        user[field.name] = field.value;
-    }
+    });
     
-    //console.log(field.id, field.name, field.value, field.checked, index);
-});
+    console.log(user);
 
-console.log(user);
+});
 
 /*var olaMundo = ('Olá Mundo');
 console.log("Primeira Variável " + olaMundo);
