@@ -1,4 +1,4 @@
-var name = document.querySelector('#exampleInputName');
+/*var name = document.querySelector('#exampleInputName');
 
 var gender = document.querySelectorAll('#form-user-create [name=gender]:checked');
 
@@ -12,26 +12,32 @@ var password = document.querySelector('#exampleInputPassword');
 
 var photo = document.querySelector('#exampleInputFile');
 
-var admin = document.querySelector('#exampleInputAdmin');
+var admin = document.querySelector('#exampleInputAdmin');*/
 
 
 
 
-var fields = document.querySelectorAll('#form-user-create [name]');
-fields.forEach(function(field, index){
+var fields = document.querySelectorAll("#form-user-create [name]");
 
-    if (field.name == 'gender') {
+//Criando um objeto (no caso é um JSon)
+var user = {  };
+
+fields.forEach(function(field){
+
+    if (field.name == "gender") {
         if (field.checked) {
-            
-            console.log('Sim', field);
-
+            //console.log("SIM", field);
+            user[field.name] = field.value;
         }
     } else {
-        console.log('Não');
+        //console.log("NÃO");
+        user[field.name] = field.value;
     }
-
+    
     //console.log(field.id, field.name, field.value, field.checked, index);
 });
+
+console.log(user);
 
 /*var olaMundo = ('Olá Mundo');
 console.log("Primeira Variável " + olaMundo);
