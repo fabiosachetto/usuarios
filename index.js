@@ -4,6 +4,8 @@ var fields = document.querySelectorAll("#form-user-create [name]");
 var user = {  };
 
 function addLine(dataUser){
+
+    console.log(dataUser);
     
     //Criando um template string
     document.getElementById("table-users").innerHTML = `
@@ -47,6 +49,18 @@ document.getElementById("form-user-create").addEventListener("submit", function(
 
     });
 
-    addLine(user);
+    //user é a variável JSon criada na linha 4
+    var objectUser = new User(
+        user.name,
+        user.gender,
+        user.birth,
+        user.country,
+        user.email,
+        user.password,
+        user.photo,
+        user.admin
+    );
+
+    addLine(objectUser);
 
 });
